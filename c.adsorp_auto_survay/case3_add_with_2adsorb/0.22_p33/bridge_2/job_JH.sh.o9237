@@ -1,0 +1,4 @@
+PBS_O_WORKDIR = /home/jihwan/vasp/cal/prj/17_graphene_on_cu_ch4/2_ads_on_cu/c/cu111_coverage_h/0.22/test_auto/vasp/bridge_2
+PBS_JOBID     = 9237.master.hpc
+x021.hpc
+Sat Jul 29 18:40:26 KST 2017

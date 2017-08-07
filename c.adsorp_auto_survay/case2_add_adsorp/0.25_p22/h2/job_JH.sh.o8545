@@ -1,0 +1,4 @@
+PBS_O_WORKDIR = /home/jihwan/vasp/cal/prj/17_graphene_on_cu_ch4/2_ads_on_cu/c/cu111_coverage_h/0.25_p22_h2
+PBS_JOBID     = 8545.master.hpc
+x005.hpc
+Wed Jul 12 16:51:45 KST 2017

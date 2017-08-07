@@ -1,0 +1,4 @@
+PBS_O_WORKDIR = /home/jihwan/vasp/cal/prj/17_graphene_on_cu_ch4/3_ch3_on_cu/c_atom/cu311_3hb
+PBS_JOBID     = 4060.master.hpc
+x021.hpc
+Mon May 29 10:06:48 KST 2017

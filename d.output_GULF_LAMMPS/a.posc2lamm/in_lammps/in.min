@@ -1,0 +1,35 @@
+#=======================================================================
+log                     min.log
+#processors             1 1 1 
+#=======================================================================
+units                  metal
+atom_style             charge
+
+dimension              3
+boundary               p p p
+#=========================== Structure =================================
+read_data              structure.data
+#============================= Potential ===============================
+include                potential
+#============================= Groups ==================================
+neighbor               0.2 bin
+neigh_modify           delay 1 every 1 check no
+#=======================================================================
+compute                peratom all pe/atom
+compute                eatoms  all reduce sum c_peratom
+#=========================== Minimization ==============================
+thermo                 10
+thermo_style           custom step pe c_eatoms lx ly lz vol pxx pyy pzz fmax fnorm
+#=======================================================================
+min_style              cg
+minimize               1.0e-15 1.0e-15 100000 100000
+#=======================================================================
+variable               natoms equal "count(all)"
+variable               teng   equal "c_eatoms"
+variable               eper   equal "v_teng/v_natoms"
+#========================================================================
+print                  "Total energy (eV)    = ${teng};"
+print                  "Number of atoms      = ${natoms};"
+print                  "Peratom energy (eV)  = ${eper};"
+print                  "All done!"
+#========================================================================
